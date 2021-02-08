@@ -1,0 +1,71 @@
+Windows iscsi initiator a aceder ao target na maquina linux
+	Linux - preparar iscsitarget, criar ficheiro ao qual o windows vai aceder
+		a-instalar pacote do iscsi:
+			img: 1
+			
+		b-ir ao ficheiro /etc/default/iscsitarget e alterar ISCSITARGET_ENABLE para true
+			img: 2
+			
+		c-criar ficheiro no linux que sera a pasta a qual o windows vai aceder
+			img: 3
+			
+		d-indicar o ficheiro criado no ficheiro de configuracoes do target /etc/iet/ietd.conf
+			img: 4
+			
+		e-Reiniciar servico
+			img: 5
+		
+		
+	Windows - fazer a conexao
+		f-usar iscsi initiator para fazer a ligacao
+			img: 6
+			
+		g-ir a Computer Management > Disk Management e configurar novo disco
+			img: 7
+			
+Linux initiator a aceder ao target na maquina Windows
+	Linux - instalar iscsi, configurar e verificar nome do initiator de forma a poder fazer a configuracao no windows
+		i-instalar pacote do iscsi
+			img: 9
+			
+		j-ir ao ficheiro /etc/iscsi/iscsid.conf e alterar node.startup para automatic
+			img: 10
+			
+		k-verificar nome do initiator do linux 
+			img: 11
+			
+	Windows - preparar iscsi, criar ficheiro ao qual o linux vai aceder
+		l-ir a Server Manager>File and Storage Services>iSCSI e instalar
+		
+		m-usar wizard para criar target, introduzindo o nome do initiator do linux
+			img: 8
+			
+	Linux - fazer a conexao
+		n-verificar targets disponiveis
+			img: 12
+			
+		o-fazer login
+			img: 13
+			
+		p-cria particao no novo disco
+			img: 14
+			
+		q-lista particoes
+			img: 15
+			
+		r-formata e monta particao
+			img: 16
+			
+		s-adicionar no ficheiro /etc/fstab comando para fazer a ligacao com adrive iscsi durante o arranque
+			img: 17
+			
+		
+			
+
+	
+	
+	
+	
+	
+	
+	
